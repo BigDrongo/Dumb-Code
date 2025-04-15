@@ -1,12 +1,18 @@
 
-car = {
-    keyTurned: false, // the key is turned off by default
-    peddlePressed: false, // the peddle is not pressed by default
-    isMoving: false, // the car is not moving by default
-}; // creating an object called car
+car = 
+    {
+        keyTurned: false, // the key is turned off by default
+        peddlePressed: false, // the peddle is not pressed by default
+        isMoving: false, // the car is not moving by default
+    }; // creating an object called car
 
+var userInput2 = document.getElementById("userInput2");// getting the input field with id userInput2
+let hasClicked = false; // variable to check if the button has been clicked
 
- 
+document.getElementById("submitBtn2").addEventListener("click", function()
+    {
+        hasClicked = true; // set the variable to true when the button is clicked
+    })
 
 document.getElementById("submitBtn").onclick = functUserInput = function(keyTurned)
         {
@@ -17,18 +23,27 @@ document.getElementById("submitBtn").onclick = functUserInput = function(keyTurn
                 {
                     car.keyTurned = true;
                     document.getElementById("p1").textContent ="the Key is turned on.";
+                    
+                    userInput2.style.display = "block"; // show the input field
+                    submitBtn2.style.display = "block"; // show the submit button
+                    p3Hide.style.display = "block";
                  }
                 else if (keyTurned !== "yes") // is user writes anything else
                 {
                     car.keyTurned = false;
                     document.getElementById("p2").textContent = "the Key isnt turned.";
+
+                    userInput2.style.display = "none"; // hide the input field
+                    submitBtn2.style.display = "none"; // hide the submit button
+                    p3Hide.style.display = "none"; // hide the paragraph
                 }
         
-            }
+        }
 
 
 
-car.start = function(keyTurned, peddlePressed, isMoving)
+
+car.start = function(keyTurned, peddlePressed, isMoving) // function to start the car
     {
         
         
